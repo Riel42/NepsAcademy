@@ -1,0 +1,23 @@
+\n --> Quebrar linha
+\t --> tabulação
+\\ --> Contra-barra
+%% --> módulo
+
+printf("[%7d]", a);
+/* Saída:
+[    123]
+
+int b = 789;
+// alinhamento à esquerda
+printf("%-7doi\n", b);
+/* Saída:
+789    oi
+
+int numero = 456;
+printf("%09d", numero);
+/* Saída:
+000000456
+*/
+
+
+ 
