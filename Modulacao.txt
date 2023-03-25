@@ -1,0 +1,115 @@
+Modularizar: dividir seu programa em módulos, em partes
+
+A função main() é um módulo, por exemplo
+
+Modulamos porque:
+
+->  Facilita o debug do código;
+->  Melhora a legibilidade do código; e
+->  Elimina a redundância do código.
+
+Função -> Passo parâmetros que serão processados e, a partir disso, gerar uma saída
+
+Exemplo:
+
+	f(x,y) = x + y
+	
+	ou
+
+	inteiro Soma(x,y){
+		retorne x + y
+	}
+
+Criamos uma função em C assim:
+
+	tipoDoRetorno nomeDaFuncao(parâmetros){
+		bloco de códigos;
+	}
+
+EXEMPLO:
+
+int soma(int a, int b){
+    int s = a + b;
+    return s;
+}
+
+int main(){
+    int x = soma(2, 3); // x recebe o valor retornado pela funcao soma com os parametros 2 e 3
+
+    printf("%d\n", x);
+    printf("%d\n", soma(10, 10));
+}
+
+/* Saída:
+5
+20
+*/
+
+VARIÁVEIS LOCAIS E GLOBAIS:
+
+Uma variável local é aquela que eu declaro dentro da função, e só será usada fora da função.
+Uma variável global pode ser chamada a qualquer momento em qualquer função.
+
+Declarando uma variável local: 
+
+#include <stdio.h>
+
+int aux(){
+    int a = 9;
+
+    int b = 123;
+    
+    // imprime os valores das variaveis a e b contidas na funcao aux
+    printf("aux -> %d %d\n", a, b);
+}
+
+int main(){
+    int a = 4;
+    
+    // imprime o valor da variavel a contida na funcao main
+    printf("Main -> %d\n", a);
+
+    // chama a funcao aux
+    aux();
+}
+
+/* 
+
+Saída:
+Main -> 4
+aux -> 9 123
+
+*/
+
+Declarando uma variável global:
+
+#include <stdio.h>
+
+int var = 7;
+
+int aux(){
+    int var = 9;
+    printf("%d\n", var);
+}
+
+int main(){
+    printf("%d\n", var);
+
+    aux();
+
+    printf("%d\n", var);
+}
+/* Saída:
+7
+9
+7
+
+*/
+
+
+
+Fontes: 
+
+https://neps.academy/br/course/introducao-a-programacao/lesson/modularizacao
+https://neps.academy/br/course/introducao-a-programacao/lesson/exemplos-de-funcoes
+https://neps.academy/br/course/introducao-a-programacao/lesson/escopo-de-variaveis
